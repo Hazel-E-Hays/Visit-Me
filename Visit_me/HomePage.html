@@ -8,17 +8,6 @@ crossorigin="anonymous">
 
     <style>
 
-    #container {
-        margin: 0px auto;
-        width: 500px;
-        height: 375px;
-        border: 10px #333 solid;
-    }
-    #videoElement {
-        width: 500px;
-        height: 375px;
-        background-color: #666;
-    }
     video {
         position: relative;
         left: 342px;
@@ -56,9 +45,14 @@ crossorigin="anonymous">
 <body style="background-color:#A3FFF4">
 <title>visit me: Home Page</title>
 <div style="background-color:#6BC7E3;height:60px"><h1  style="text-align: center">Visiting page for John Doe</h1></div>
+<div><h4>Current Date and Time is <span id='date-time'></span>.</h4></div>
 <a target="_blank" style="position:relative;top:15px"class="fcc-btn" href="VideoCall.html">Video Call now!</a>
 <a target="_blank" style="position:relative;top:15px;left: 75px"class="fcc-btn" href="Calendar.html">Schedule a new visit here!</a>
-<div style="background-color:#6BC7E3;top:150px;height:420px; width:1517px ;padding:1px; position:absolute", id="visits"><h1  style="text-align: center">Upcoming Visits</h1></div>
+<div style="background-color:#6BC7E3;top:50px;height:420px; width:1000px ;padding:1px; position:relative", id="visits"><h1  style="text-align: center">Upcoming Visits</h1></div>
+<img src="img/map.png" style="width:480px;height:360px; position:relative;top:-350px; left:1020px">
 </body>
-<script src="Visit_me.js"></script>
+<script>
+    var dt = new Date();
+    document.getElementById('date-time').innerHTML=dt;
+</script>
 </html>
