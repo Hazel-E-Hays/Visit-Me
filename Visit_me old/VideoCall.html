@@ -1,0 +1,125 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+<link rel="icon" href="img/Cross.png">
+    <style>
+
+    #container {
+        margin: 0px auto;
+        width: 500px;
+        height: 375px;
+        border: 10px #333 solid;
+    }
+    #videoElement {
+        width: 500px;
+        height: 375px;
+        background-color: #666;
+    }
+    video {
+        position: relative;
+        left: 342px;
+        top: -118px;
+    }
+</style>
+
+    </head>
+<body style="background-color:#A3FFF4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="HomePage.html"> <img src="img/Logo.png" alt="Visit Me logo" height = "40"/> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="HomePage.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Calendar.html">Calendar</a>
+              </li>
+              <li class="nav-item pull-right">
+                <a class="nav-link" href="CoverPage.html">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+<title>visit me: video call</title>
+<a href="HomePage.html">Back</a>
+    <div id="Container">
+        <img src="img/noVideo.png" height = "375", width="500">
+        <video id="vid" height="120" width="160"muted="muted" autoplay></video><br>
+    </div>
+    <button onclick="toggle()" id="tog" value="false">toggle camera</button><br>
+
+    <div id="box", style="position:relative; left:100px">
+        <form id="yourform" onsubmit="f(event); reset()">
+            <input type="text" id="input" placeholder="Enter text" autocapitalize="off" />
+            <input type="submit" id="submitbutton">
+        </form>
+        <div id="output" style="background-color:#FFFFFF;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+    </div>
+    </div>
+    <script>
+        var tog = true
+        vidPlay()
+        function toggle(){
+            if(tog == true)
+            {
+                console.log("ON")
+                vidOff()
+                tog = false
+            }
+            else{
+                console.log("Off")
+                vidPlay()
+                tog = true
+            }
+        }
+
+        function vidPlay(){
+        var video = document.querySelector("#vid");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+            }
+        }
+        function vidOff() {
+            //clearInterval(theDrawLoop);
+            // //ExtensionData.vidStatus = 'off';
+            // vid.pause();
+            // vid.src = "";
+            // localstream.getTracks()[0].stop();
+            // console.log("Vid off");
+            var stream = vid.srcObject;
+            var tracks = stream.getTracks();
+
+            for (var i = 0; i < tracks.length; i++) {
+                var track = tracks[i];
+                track.stop();
+            }
+
+            vid.srcObject = null;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function f(e) {
+            e.preventDefault();
+            var t = document.getElementById("input").value;
+            document.getElementById("output").innerHTML +=
+                `<p>USER: ${t}</p>`
+            e.stopImmediatePropagation();
+        }
+        document.getElementById("yourform").addEventListener("submit", f);
+
+    </script>
+</body>
+</html>
