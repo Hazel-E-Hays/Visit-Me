@@ -111,7 +111,21 @@ crossorigin="anonymous">
 <body>
 
 <title>Messages</title>
-<div class="row mb-5"> </div>
+<div class="container-fluid">
+
+<div class="row mb-2"> </div>
+<div class="row">
+  <div class="col-8" style="padding-left:112px">
+    <div class="card text-center w-75" style="background-color: #D6D6D6 ;">
+      <div class="row">
+        <div class="col my-auto"><h3>Jane Smith</h3></div>
+        <div class="col"><a href="Medical.html"><img src="img/women_2.png" alt="A picture of a woman." style="width:45%" /></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-2"> </div>
 
     <div id="box" style="padding-left:100px; width:800px">
         <div id="output">
@@ -119,11 +133,18 @@ crossorigin="anonymous">
         </div>
         <div class="row mb-5"> </div>
         <form id="yourform" onsubmit="f(event); reset()">
-          <textarea  style="width:700px; height:100px" id="input" placeholder="Enter text" autocapitalize="off"></textarea>
-          <input type="submit" id="submitbutton">
+          <textarea  style="width:700px; height:100px" id="input" placeholder="Enter message" autocapitalize="off"></textarea>
+          <button type="submit" id="submitbutton">Send</button>
       </form>
     </div>
-Jane
+    <div class="row mb-3"></div>
+
+    <button id="hidden1" onClick="demo1(event)">Demo 1</button>
+
+    <button id="hidden2" onClick="demo2(event)">Demo 2</button>
+
+    <button id="hidden3" onClick="demo3(event)">Demo 3</button>
+  </div>
 </body>
 
 </html>
@@ -140,5 +161,42 @@ Jane
       e.stopImmediatePropagation();
   }
   document.getElementById("yourform").addEventListener("submit", f);
+
+  function demo1(e) {
+      e.preventDefault();
+      document.getElementById("output").innerHTML +=
+          `
+          <div class="message-reciever">
+        <p class="message-content">What's up?</p>
+          </div>`
+      e.stopImmediatePropagation();
+  }
+  document.getElementById("hidden1").addEventListener("onClick", demo1);
+
+  
+  function demo2(e) {
+      e.preventDefault();
+      document.getElementById("output").innerHTML +=
+          `
+          <div class="message-reciever">
+        <p class="message-content">How are you feeling?</p>
+          </div>`
+      e.stopImmediatePropagation();
+  }
+  document.getElementById("hidden2").addEventListener("onClick", demo2);
+
+  
+  function demo3(e) {
+      e.preventDefault();
+      document.getElementById("output").innerHTML +=
+          `
+          <div class="message-reciever">
+        <p class="message-content">When can I visit?</p>
+          </div>`
+      e.stopImmediatePropagation();
+  }
+  document.getElementById("hidden3").addEventListener("onClick", demo3);
+
+
 
 </script>
