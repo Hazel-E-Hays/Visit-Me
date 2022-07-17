@@ -23,44 +23,37 @@ crossorigin="anonymous">
         top: -118px;
     }
 </style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="HomePage.html"> <img src="img/Logo.png" alt="Visit Me logo" height = "40"/> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="HomePage.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="Calendar.html">Calendar</a>
+          </li>
+          <li class="nav-item pull-right">
+            <a class="nav-link" href="CoverPage.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</head>
 
-    </head>
-<body style="background-color:#A3FFF4">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="HomePage.html"> <img src="img/Logo.png" alt="Visit Me logo" height = "40"/> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="HomePage.html">Home</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="Calendar.html">Calendar</a>
-              </li>
-              <li class="nav-item pull-right">
-                <a class="nav-link" href="CoverPage.html">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-<title>visit me: video call</title>
-<a href="HomePage.html">Back</a>
+<body>
+
+<title>Video Call</title>
+<div class="row mb-5"> </div>
     <div id="Container">
         <img src="img/noVideo.png" height = "375", width="500">
         <video id="vid" height="120" width="160"muted="muted" autoplay></video><br>
     </div>
-    <button onclick="toggle()" id="tog" value="false">Turn Camera Off</button><br>
+    <button style="margin-left:75%"onclick="toggle()" id="tog" value="false">Turn Camera Off</button><br>
 
-    <div id="box", style="position:relative; left:100px">
-        <form id="yourform" onsubmit="f(event); reset()">
-            <input type="text" id="input" placeholder="Enter text" autocapitalize="off" />
-            <input type="submit" id="submitbutton">
-        </form>
-        <div id="output" style="background-color:#FFFFFF;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-    </div>
-    </div>
     <script>
         var tog = true
         vidPlay()
