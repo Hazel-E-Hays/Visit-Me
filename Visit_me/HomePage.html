@@ -69,7 +69,12 @@ crossorigin="anonymous">
       </div> 
     </div>
 
-    <div class="col-3">Date and weather</div>
+    <div class="col-3">
+      <h4>Date and Time</h4>
+      <div class="card text-center w-75" style="background-color: #D6D6D6 ;">
+       <h4><span id='date-time'></span></h4>
+      </div>
+    </div>
   </div>
 
   <div class="row mb-5"> </div>
@@ -77,11 +82,14 @@ crossorigin="anonymous">
   <div class="row">
     <div class="col-9">
       <div class="card text-center w-75" style="background-color: #D6D6D6 ;">
-        Put something here dawg
+        <div class="row">
+          <div class="col my-auto"><h3>Message your Care Team</h3></div>
+          <div class="col"><a href="Medical.html"><img src="img/medical_message.png" alt="Message your care team." style="width:60%" /></a></div>
+        </div>
       </div>
     </div>
 
-    <div class="col-3">Care team <br>
+    <div class="col-3"><h3>Care Team</h3><br>
       <div class="card" style="background-color: #D6D6D6; height: 18rem">
         <strong style="font-size:1.5rem">Attending: </strong> <text style="font-size:1.5rem">Dr.Olivia Johnson</text>
         <strong style="font-size:1.5rem">Resident: </strong> <text style="font-size:1.5rem">Dr.James Miller</text> 
@@ -106,7 +114,7 @@ crossorigin="anonymous">
         <div class="row">
           <div class="col"> <img src="img/women_one.png" alt="Clip art illustration of a woman" style="width:80%" /></div>
           <div class="col"><a href="VideoCall.html"><img src="img/phone.png" href="CoverPage.html"alt="Make a call" style="width:80%" /></a></div>
-          <div class="col"><img src="img/message.png" alt="Send a message" style="width:80%" /></div>
+          <div class="col"><a href="Jill.html"><img src="img/message.png" alt="Send a message" style="width:80%" /></a></div>
         </div>
 
         <div class="row mb-1"> </div>
@@ -129,7 +137,7 @@ crossorigin="anonymous">
         <div class="row">
           <div class="col"> <img src="img/women_2.png" alt="Clip art illustration of a woman" style="width:80%" /></div>
           <div class="col"><a href="VideoCall.html"><img src="img/phone.png" href="CoverPage.html"alt="Make a call" style="width:80%" /></a></div>
-          <div class="col"><img src="img/message.png" alt="Send a message" style="width:80%" /></div>
+          <div class="col"><a href="Jane.html"><img src="img/message.png" alt="Send a message" style="width:80%" /></a></div>
         </div>
 
         <div class="row mb-1"> </div>
@@ -151,7 +159,7 @@ crossorigin="anonymous">
         <div class="row">
           <div class="col"> <img src="img/man.png" alt="Clip art illustration of a man" style="width:80%" /></div>
           <div class="col"><a href="VideoCall.html"><img src="img/phone.png" href="CoverPage.html"alt="Make a call" style="width:80%" /></a></div>
-          <div class="col"><img src="img/message.png" alt="Send a message" style="width:80%" /></div>
+          <div class="col"><a href="Joe.html"><img src="img/message.png" alt="Send a message" style="width:80%" /></a></div>
         </div>
 
         <div class="row mb-1"> </div>
@@ -164,3 +172,7 @@ crossorigin="anonymous">
 </body>
 
 </html>
+<script>
+  var dt = new Date();
+  document.getElementById('date-time').innerHTML=dt;
+</script>
