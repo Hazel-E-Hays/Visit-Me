@@ -58,7 +58,62 @@ crossorigin="anonymous">
 <body>
 
 <title>Provider Messages</title>
+<div class="container-fluid">
+  <div class="row mb-2"> </div>
+<div class="row">
+  <div class="col-8" style="padding-left:112px">
+    <div class="card text-center" style="background-color: #D6D6D6 ;">
+      <div class="row">
+        <div class="col my-auto"><h3>Leave a message for your care team to read at a later time.</h3></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-3"></div>
+
+<div class="row mb-5">
+
+</div>
+<div class="card-columns" id="output">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Example Note</h5>
+      <p class="card-text">
+        Use these notes like digital reminders for any questions or concerns you want to address with your care team.
+      </p>
+    </div>
+  </div>
+
+</div>
+<div id="box" style=" width:800px">
+  <div class="row mb-5"> </div>
+    <textarea  style="width:700px; height:100px" id="input" placeholder="Enter message" autocapitalize="off"></textarea>
+    <button type="submit" id="submitbutton" onClick="new_note(event)">Send</button>
+</div>
+</div>
 
 </body>
 
 </html>
+
+<script type="text/javascript">
+  function new_note(e)
+  {
+    e.preventDefault();
+    var t = document.getElementById("input").value;
+    document.getElementById("output").innerHTML +=
+          `
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Note</h5>
+              <p class="card-text">
+                ${t}
+              </p>
+            </div>
+          </div>
+          `
+  t = document.getElementById("input").value = ' ';
+}
+
+
+</script>
