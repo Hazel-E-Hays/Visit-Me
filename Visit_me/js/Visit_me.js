@@ -1,39 +1,210 @@
-function openSelect(){
-var inp = document.getElementById("selection");
-inp.innerHTML = "";
-var node= document.createElement("div");
-node.style="background-color: #A3FFF4; width:180px"
-    node.appendChild(document.createTextNode("Patient is busy from:"))
-    node.appendChild(document.createElement("br"))
-    node.append("\n6:30 - 8:00  -  Surgery")
-    node.appendChild(document.createElement("br"))
-    node.appendChild(document.createTextNode("8:00 AM - 2:00 PM  -  Rest Period"))
-    node.appendChild(document.createElement("br"))
-    node.appendChild(document.createTextNode("2:00 PM - 3:00 PM  -  Post-Surgery Checkup"))
-    node.appendChild(document.createElement("br"))
-    node.appendChild(document.createTextNode("5:00 PM - 10:00 PM  -  Rest Period"))
-var node2=document.createElement("div");
-node2.style="background-color:#A3FFF4; width:600px;position:relative;left:200px; top:-150px";
-    node2.appendChild(document.createTextNode("Start: "));
-    var node4 = document.createElement("input");
-    node4.type="time"
-    node4.min="15:00"
-    node4.max="16:00"
-    node2.appendChild(node4)
-    node2.appendChild(document.createTextNode("     End: "));
-    var node5 = document.createElement("input");
-    node5.type="time"
-    node5.min="16:00"
-    node5.max="17:00"
-    node2.appendChild(node5)
-    var node3 = document.createElement("a")
-    node3.target="_blank"
-    node3.style="position:relative;top:0px;left:75px"
-    node3.class="fcc-btn"
-    node3.href="HomePageSecret.html"
-    node3.appendChild(document.createTextNode("Submit"));
-    node2.appendChild(node3);
-    node.appendChild(node2);
+function close(){
+    var elt=document.getElementById("sunday")
+    elt.innerHTML=" ";
 
-    inp.appendChild(node)
+    document.getElementById("12").style.backgroundColor="#dfdada";
+  }
+
+function sunday_schedule(){
+var color = document.getElementById("12").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("sunday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Sunday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Surgery <br>
+            10:30AM - 1:00PM: Recovery <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="sunclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("sunclose").addEventListener("click",close)
+}
+
+
+function mon_close(){
+    var elt=document.getElementById("monday")
+    elt.innerHTML=" ";
+
+    document.getElementById("13").style.backgroundColor="#dfdada";
+  }
+
+function monday_schedule(){
+var color = document.getElementById("13").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("monday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Monday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Follow up Appointment <br>
+            10:30AM - 1:00PM: Lunch <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="monclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("monclose").addEventListener("click",mon_close)
+}
+
+
+function tu_close(){
+    var elt=document.getElementById("tuesday")
+    elt.innerHTML=" ";
+
+    document.getElementById("14").style.backgroundColor="#dfdada";
+  }
+
+function tuesday_schedule(){
+var color = document.getElementById("14").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("tuesday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Tuesday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Breakfast <br>
+            12:30PM - 1:00PM: Lunch <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="tuclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("tuclose").addEventListener("click",tu_close)
+}
+
+
+function wed_close(){
+    var elt=document.getElementById("wednesday")
+    elt.innerHTML=" ";
+
+    document.getElementById("15").style.backgroundColor="#dfdada";
+  }
+
+function wednesday_schedule(){
+var color = document.getElementById("15").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("wednesday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Wednesday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Breakfast <br>
+            11:00AM - 11:30AM: Appointment with Specialist <br>
+            12:30PM - 1:00PM: Lunch <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="wedclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("wedclose").addEventListener("click",wed_close)
+}
+
+
+function thu_close(){
+    var elt=document.getElementById("thursday")
+    elt.innerHTML=" ";
+
+    document.getElementById("16").style.backgroundColor="#dfdada";
+  }
+
+function thursday_schedule(){
+var color = document.getElementById("16").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("thursday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Thursday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Breakfast <br>
+            12:30PM - 1:00PM: Lunch <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="thuclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("thuclose").addEventListener("click",thu_close)
+}
+
+function fri_close(){
+    var elt=document.getElementById("friday")
+    elt.innerHTML=" ";
+
+    document.getElementById("17").style.backgroundColor="#dfdada";
+  }
+
+function friday_schedule(){
+var color = document.getElementById("17").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("friday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Friday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Breakfast <br>
+            12:30PM - 1:00PM: Lunch <br>
+            2:00PM - 2:30PM: Vitals <br>
+            2:30PM - 6:00PM: Visiting Hours <br>
+            6:00PM - 9:00PM: Supper
+        </p>
+        <img id="friclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("friclose").addEventListener("click",fri_close)
+}
+
+function sat_close(){
+    var elt=document.getElementById("saturday")
+    elt.innerHTML=" ";
+
+    document.getElementById("18").style.backgroundColor="#dfdada";
+  }
+
+function saturday_schedule(){
+var color = document.getElementById("18").style.backgroundColor="#3295a8"
+
+var schedule=document.getElementById("saturday").innerHTML=
+        `
+        <div class="card">
+        <div class="card-body" style="background-color:#d5dadb">
+        <h5 class="card-title">Saturday</h5>
+        <p class="card-text">
+            6:00AM - 7:30AM: Vitals <br>
+            8:00AM - 9:00AM: Discharge <br>
+        </p>
+        <img id="satclose" src="img/close.png" alt="Close" height = "40"/>
+        </div>
+        </div>
+        `
+    document.getElementById("satclose").addEventListener("click",sat_close)
 }
